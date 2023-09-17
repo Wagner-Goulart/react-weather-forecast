@@ -1,0 +1,75 @@
+.temperature-card {
+    background-color: #fff;
+    width: 240px;
+    height: 300px;
+    border-radius: 15px;
+    align-self: center;
+    padding: .5rem;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title-descrition {
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+}
+
+.title-descrition span {
+    align-self: flex-end;
+    font-size: .900rem;
+    font-weight: 900;
+    color: #798499
+}
+
+.temparature-display {
+    color: #233657;
+    text-align: center;
+    margin-top: 1.3rem;    
+}
+
+.temparature-display .temperature {
+    font-size: 2.5rem;
+}
+
+.temparature-display .city,
+.temparature-display .country {
+    display:block;
+}
+
+.temparature-display .city {
+    margin-top: .5rem;
+    text-transform: uppercase;
+}
+
+.temparature-display .country{
+    margin-top: .5rem;
+}
+
+.general-infos {
+    margin-top: 1rem;
+    font-size: .7rem;
+    color: #233657;
+    font-weight: 700;
+}
+
+.general-infos ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: .8rem;
+}
+
+.general-infos ul li label {
+    font-size: .8rem;
+    margin-bottom: 5px;
+}
+
