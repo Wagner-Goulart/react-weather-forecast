@@ -6,7 +6,7 @@ async function fechtWeatherService(latitude, longitude) {
 
       const data = await response.json();
       return data
-
+      
     } catch (erro) {
       console.error("Erro fetching data", erro);
     }
