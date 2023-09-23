@@ -12,7 +12,7 @@ function TemperatureCard() {
 
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(true);
-  const { hour, minutes, formatedDate} = getCurrentTimeAndDate()
+  const [currentTime, setCurrentTime] = useState(getCurrentTimeAndDate())
 
   useEffect(() => {
     function success(pos) {
@@ -35,6 +35,14 @@ function TemperatureCard() {
     }
 
     navigator.geolocation.watchPosition(success);
+
+    const intervalID = setInterval(() => {
+        setCurrentTime(getCurrentTimeAndDate())
+    }, 10000);
+
+    return () => {
+      clearInterval(intervalID)
+    }
   }, []);
 
   return (
@@ -45,9 +53,9 @@ function TemperatureCard() {
         <>
           <TemperatureCardTitle
             weather={weather}
-            hour={hour}
-            minutes={minutes}
-            formatedDate={formatedDate}
+            hour={currentTime.hour}
+            minutes={currentTime.minutes}
+            formatedDate={currentTime.formatedDate}
           />
           <TemperatureDisplay weather={weather} />
           <GeneralInfos weather={weather} />
