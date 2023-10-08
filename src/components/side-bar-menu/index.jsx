@@ -19,7 +19,7 @@ function SideBarMenu() {
             <li>
               <a>
                 <RxDashboard className="icon" />
-                Dashboard
+                Forecast
               </a>
             </li>
             <li>
