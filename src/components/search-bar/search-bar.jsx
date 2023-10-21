@@ -7,6 +7,7 @@ import { useContext, useState } from "react";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CityContext } from "../../contexts/cityContext";
+import {  fetchCityService } from "../../services/fetchCityService";
 
 const theme = createTheme({
   palette: {
@@ -25,30 +26,18 @@ export default function SearchBar() {
     setValue(e.target.value)
   }
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = async (e) => {
 
     if(!value) {
       return
     }
 
     if(e.key === "Enter"){
-      try{
-        const fetchCity =  async()=> {
-          const response = await fetch (`http://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=1&appid=4cb5a31adc4fff6205dbb26aa82448a3`)
-  
-          const data = await response.json()
-          setCity(data)
-      
-        }
-        fetchCity()
-        setValue('')
 
-      }catch (e) {
+      const city = await fetchCityService(value)
+      setCity(city)
+      setValue('')
 
-        console.error ("ERRO AO TENTAR BUSCA AS INFORMAÇÕES NA API " + e)
-      }
-
-      
     }
     
   }
