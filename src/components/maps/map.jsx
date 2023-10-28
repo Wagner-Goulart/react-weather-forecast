@@ -6,6 +6,7 @@ import { CityContext } from "../../contexts/cityContext";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect } from "react";
+import { PlaceHolderMap } from "./placeHolderMap";
 
 function FlyToNewMapLocation({ latidude, longitude}) {
     const map = useMap()
@@ -45,7 +46,7 @@ function Map() {
             </Marker>
           </MapContainer>
         ) : (
-          "Digite uma cidade para buscar as informações"
+          <PlaceHolderMap />
         )}
       </>
     );
