@@ -1,9 +1,5 @@
 import "./side-bar-menu.styles.css";
-import { MdSort } from "react-icons/md";
-import { RxDashboard } from "react-icons/rx";
-import { FiMap } from "react-icons/fi";
-import { LuCalendarDays } from "react-icons/lu";
-import { FiSettings } from "react-icons/fi";
+import { GoHome } from "react-icons/go";
 import { TemperatureCard } from "../temperature-card";
 
 function SideBarMenu() {
@@ -18,32 +14,8 @@ function SideBarMenu() {
           <ul>
             <li>
               <a>
-                <RxDashboard className="icon" />
-                Forecast
-              </a>
-            </li>
-            <li>
-              <a>
-                <MdSort className="icon" />
-                Statistics
-              </a>
-            </li>
-            <li>
-              <a>
-                <FiMap className="icon" />
-                Map
-              </a>
-            </li>
-            <li>
-              <a>
-                <LuCalendarDays className="icon" />
-                Calendar
-              </a>
-            </li>
-            <li>
-              <a>
-                <FiSettings className="icon" />
-                Settings
+                <GoHome className="icon" />
+                Home
               </a>
             </li>
           </ul>

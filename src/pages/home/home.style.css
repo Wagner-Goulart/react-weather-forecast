@@ -1,9 +1,10 @@
 .section-home {
     background-color: #ffffff;
-    height: 100vh;
+    height: 90vh;
     width: calc(100vw - 350px);
     margin-left: 350px;
     padding: 20px 15px;
+    overflow: hidden;
 }
 
 
